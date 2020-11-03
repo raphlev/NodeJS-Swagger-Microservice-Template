@@ -3,6 +3,13 @@ This version includes support for OpenAPI 3.0
 https://developers.redhat.com/blog/2019/01/14/building-a-node-js-service-using-the-api-first-approach/
 https://github.com/rhappdev/nodejs-template/tree/openapi3
 
+The main purpose of this repository is to show a project setup and workflow for writing microservice.
+- Rest APIs will be using the Swagger (OpenAPI) Specification
+- this is a template for writing back-end services
+- Using Prom-client a javascript client ( https://prometheus.io/ ) that provide metrics for monitoring web apps
+- Using async wrapper to manage debugging
+- Using Typescript and linters
+
 ************************************************************************************
 ************************************************************************************
 
