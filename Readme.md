@@ -13,10 +13,10 @@ The main purpose of this repository is to show a project setup and workflow for 
 ************************************************************************************
 ************************************************************************************
 
-ATTENTION: le contenu de cette description est basé sur l'utilisation de oas-tools
-Il y a eu un changement de code: 'changed from oas-tools to express-openapi-validator'
---> oas-tools n'est plus utilisé
---> express-openapi-validator est utilisé à la place
+ATTENTION: the content of this description is based on the use of oas-tools
+There was a code change: 'changed from oas-tools to express-openapi-validator'
+-> oas-tools is no longer used
+-> express-openapi-validator is used instead
 
 ************************************************************************************
 ************************************************************************************
