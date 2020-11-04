@@ -131,7 +131,7 @@ Npm scripts basically allow us to call (and chain) terminal commands via npm.
 | `build:live:windows`   | Full build. Runs ALL build tasks (windows) |
 | `build:dev`   | Development with cold reloading: start app using npm package ts-node on root file ./src/index.ts, watching for changes to .ts and .js and .json files from within watch=*.* (by default as not set) |
 | `dev`   |  Execute build:dev with some env variables to set debugging level and ts-node caching to false - By default, ts-node uses a per-user cache of compiled files - when one original source file is determined to have changed it is recompiled. See https://github.com/ReactiveX/rxjs/issues/3948 |
-| `dev:windows`   | Execute build:dev (windows) |
+| `dev:windows`   | Execute dev (windows) |
 | `install:start`   | Install, runs build, run tests and runs node on dist/index.js (linux) |
 | `install:start:windows`   | Install, runs build, run tests and runs node on dist/index.js (windows)|
 | `lint`   | Runs TSLint on project files |
