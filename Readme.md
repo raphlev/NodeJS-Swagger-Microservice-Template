@@ -10,17 +10,6 @@ The main purpose of this repository is to show a project setup and workflow for 
 - Using async wrapper to manage debugging
 - Using Typescript and linters
 
-************************************************************************************
-************************************************************************************
-
-ATTENTION: the content of this description is based on the use of oas-tools
-There was a code change: 'changed from oas-tools to express-openapi-validator'
--> oas-tools is no longer used
--> express-openapi-validator is used instead
-
-************************************************************************************
-************************************************************************************
-
 # Environment vars
 This project uses the following environment variables:
 
@@ -310,8 +299,14 @@ components:
    Defines the base path or the servers available.
 
 ## Swagger Middleware
-The project is using npm module `oas-tools` that provides middleware functions for metadata, security, validation and routing, and bundles Swagger UI into Express using OpenAPI 3.0 spec.
 
+The project is using openAPI tool npm module `express-openapi-validator` (Validates embedded JSON-examples in OpenAPI-specs). It previously used `oas-tools`( NodeJS module to manage RESTful APIs defined with OpenAPI 3.0 Description over express servers, including security validations) but was replaced by the express module.
+--- It provides middleware functions for metadata, security, validation and routing, and bundles Swagger UI into Express using OpenAPI 3.0 spec.
+--- It provides Data Validators: check to see if API requests and responses are lining up with the API description.
+
+See https://openapi.tools/
+
+### Before, with `oas-tools`:
 __It is also possible to set configuration variables, these are them:__
 
 | Name	| Type	| Explanation / Values |
@@ -352,6 +347,9 @@ const swaggerDoc = loadDocumentSync(basePath + "/definition/swagger.yaml");
     });
 ```
 
+### Now, with `express-openapi-validator`:
+__check:__
+--- https://www.npmjs.com/package/express-openapi-validator
 
 - Swagger Router
 
