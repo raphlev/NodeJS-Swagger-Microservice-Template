@@ -124,13 +124,27 @@ Npm scripts basically allow us to call (and chain) terminal commands via npm.
 
 | Npm Script | Description |
 | ------------------------- | ------------------------------------------------------------------------------------------------- |
-| `start`                   | Runs full build and runs node on dist/index.js. Can be invoked with `npm start`                  |
-| `build:copy`                   | copy the *.yaml file to dist/ folder      |
-| `build:live`                   | Full build. Runs ALL build tasks       |
-| `build:dev`                   | Full build. Runs ALL build tasks with all watch tasks        |
-| `dev`                   | Runs full build before starting all watch tasks. Can be invoked with `npm dev`                                         |
-| `test`                    | Runs build and run tests using mocha        |
-| `lint`                    | Runs TSLint on project files       |
+| `clean`   | Delete dist folder (linux) |
+| `clean:windows`   | Delete dist folder (windows) |
+| `build:copy`   | copy the *.yaml file to dist/ folder using cpx npm package |
+| `build:live`   | Full build. Runs ALL build tasks (linux) |
+| `build:live:windows`   | Full build. Runs ALL build tasks (windows) |
+| `build:dev`   | Development with cold reloading: start app using npm package ts-node on root file ./src/index.ts, watching for changes to .ts and .js and .json files from within watch=*.* (by default as not set) |
+| `dev`   |  Execute build:dev with some env variables to set debugging level and ts-node caching to false - By default, ts-node uses a per-user cache of compiled files - when one original source file is determined to have changed it is recompiled. See https://github.com/ReactiveX/rxjs/issues/3948 |
+| `dev:windows`   | Execute build:dev (windows) |
+| `install:start`   | Install, runs build, run tests and runs node on dist/index.js (linux) |
+| `install:start:windows`   | Install, runs build, run tests and runs node on dist/index.js (windows)|
+| `lint`   | Runs TSLint on project files |
+| `start`   | Runs node on dist/index.js (linux) |
+| `start:windows`   | Runs node on dist/index.js (windows) |
+| `start:live`   | Full build. Runs ALL build tasks. Set debugging level. Runs node on dist/index.js (linux) |
+| `start:live:windows`   | Full build. Runs ALL build tasks. Set debugging level. Runs node on dist/index.js (windows) |
+| `test`         | Run tests using mocha        |
+| `test:NoDebug`   | Run all tests using mocha without debug mode (linux) |
+| `test:windows`   | Run all tests using mocha (windows) |
+| `test:windows:NoDebug`   | Run tests using mocha without debug mode (windows) |
+| `testApp`   | Test swagger docs app using mochaTest  (linux)  |
+| `testApp:windows`   | Test swagger docs app using mochaTest (windiows) |
 
 ### Using the debugger in VS Code
 Node.js debugging in VS Code is easy to setup and even easier to use. 

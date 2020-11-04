@@ -44,27 +44,27 @@
     "typescript": "3.8.3"
   },
   "scripts": {
-    "start": "npm install && npm run test:NoDebug && npm run start:live",
-    "start:windows": "npm install && npm run test:windows:NoDebug && npm run start:live:windows",
     "clean": "rm -rf dist",
     "clean:windows": "del-cli dist",
     "build:copy": "cpx \"src/**/*.yaml\" dist/",
     "build:live": "npm run clean && npm run lint && tsc -p tsconfig.json && npm run build:copy",
     "build:live:windows": "npm run clean:windows && npm run lint && tsc -p tsconfig.json && npm run build:copy",
-    "start:build": "DEBUG=app:* node dist/index.js",
-    "start:build:windows": "set DEBUG=app:* && node dist/index.js",
+    "build:dev": "nodemon --exec ts-node --ext ts,js,json -- ./src/index.ts",
+    "dev": "DEBUG=app:* && TS_NODE_CACHE=false && npm run build:dev",
+    "dev:windows": "set DEBUG=app:* && set TS_NODE_CACHE=false && npm run build:dev",
+    "install:start": "npm install && npm run test:NoDebug && npm run start:live",
+    "install:start:windows": "npm install && npm run test:windows:NoDebug && npm run start:live:windows",
+    "lint": "tslint -p tsconfig.json",
+    "start": "DEBUG=app:* node dist/index.js",
+    "start:windows": "set DEBUG=app:* && node dist/index.js",
     "start:live": "npm run build:live && DEBUG=app:* && node dist/index.js",
     "start:live:windows": "npm run build:live:windows && set DEBUG=app:* && node dist/index.js",
     "test": "DEBUG=app:* && TS_NODE_CACHE=false && ./node_modules/.bin/mocha --require ts-node/register --recursive './test/**/*.spec.ts' --exit",
     "test:NoDebug": "DEBUG=NONE && TS_NODE_CACHE=false && ./node_modules/.bin/mocha --require ts-node/register --recursive './test/**/*.spec.ts' --exit",
+    "test:windows": "set DEBUG=app:* && set TS_NODE_CACHE=false && .\\node_modules\\.bin\\mocha --require ts-node/register --recursive './test/**/*.spec.ts' --exit",
     "test:windows:NoDebug": "set DEBUG=NONE && set TS_NODE_CACHE=false && .\\node_modules\\.bin\\mocha --require ts-node/register --recursive './test/**/*.spec.ts' --exit",
-    "test:windows:WithDebug": "set DEBUG=app:* && set TS_NODE_CACHE=false && .\\node_modules\\.bin\\mocha --require ts-node/register --recursive './test/**/*.spec.ts' --exit",
-    "build:dev": "nodemon --exec ts-node -- ./src/index.ts",
-    "dev": "DEBUG=app:* && TS_NODE_CACHE=false && npm run build:dev",
-    "dev:windows": "set DEBUG=app:* && set TS_NODE_CACHE=false && npm run build:dev",
-    "lint": "tslint -p tsconfig.json",
-    "testOne": "TS_NODE_CACHE=false && ./node_modules/.bin/mocha --require ts-node/register './test/application.spec.ts'",
-    "testOne:windows": "set TS_NODE_CACHE=false && .\\node_modules\\.bin\\mocha --require ts-node/register '.\\test\\application.spec.ts'"
+    "testApp": "TS_NODE_CACHE=false && ./node_modules/.bin/mocha --require ts-node/register './test/application.spec.ts'",
+    "testApp:windows": "set TS_NODE_CACHE=false && .\\node_modules\\.bin\\mocha --require ts-node/register '.\\test\\application.spec.ts'"
   },
   "engines": {
     "node": ">6.11.0"
