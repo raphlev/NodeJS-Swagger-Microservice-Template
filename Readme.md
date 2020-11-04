@@ -129,7 +129,7 @@ Npm scripts basically allow us to call (and chain) terminal commands via npm.
 | `build:copy`   | copy the *.yaml file to dist/ folder using cpx npm package |
 | `build:live`   | Full build. Runs ALL build tasks (linux) |
 | `build:live:windows`   | Full build. Runs ALL build tasks (windows) |
-| `build:dev`   | Development with cold reloading: start app using npm package nodemon and ts-node on root file ./src/index.ts, watching for changes to .ts and .js and .json files from within watch=*.* (by default as not set). `nodemon --exec ts-node --ext ts,js,json -- ./src/index.ts` |
+| `build:dev`   | Development with cold reloading: start app using npm package nodemon and ts-node on root file ./src/index.ts, watching for changes to .ts and .js and .json files from watch = all files and directories (default watch not set). `nodemon --exec ts-node --ext ts,js,json -- ./src/index.ts` |
 | `dev`   |  Execute build:dev with some env variables to set debugging level and ts-node caching to false - By default, ts-node uses a per-user cache of compiled files - when one original source file is determined to have changed it is recompiled. See https://github.com/ReactiveX/rxjs/issues/3948 |
 | `dev:windows`   | Execute dev (windows) |
 | `install:start`   | Install, runs build, run tests and runs node on dist/index.js (linux) |
