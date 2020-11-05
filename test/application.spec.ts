@@ -1,11 +1,11 @@
 import chaiHttp = require('chai-http');
-import * as chai from 'chai';
+import chai from 'chai';
 import app from '../src/application';
 
 const expect = chai.expect;
 chai.use(chaiHttp);
 
-describe('App', () => {
+describe('Application - Test Swagger-UI docs request', () => {
   it('works', (done: () => void): void => {
   chai.request(app)
       .get('/docs/')

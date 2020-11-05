@@ -1,12 +1,9 @@
-import * as cls from 'cls-hooked';
+import { getNamespace,createNamespace } from 'cls-hooked';
 import * as uuid from 'node-uuid';
 import * as express from 'express';
-import * as Debug from 'debug';
+import Debug from 'debug';
 
 const debug = Debug('app:src:lib:namespace');
-
-const getNamespace = cls.getNamespace;
-const createNamespace = cls.createNamespace;
 const NAMESPACE: string = 'SOS';
 export const REQ_NAME: string = 'X-Request-Id';
 export const request = createNamespace(NAMESPACE);

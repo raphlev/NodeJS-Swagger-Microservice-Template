@@ -2,8 +2,8 @@ import * as env from './env';
 import { getRequestId } from './lib/cls';
 import { IncomingHttpHeaders, OutgoingHttpHeaders } from 'http';
 import * as express from 'express';
-import * as perfy from 'perfy';
-import * as Log from 'debug-level';
+import perfy from 'perfy';
+import Log from 'debug-level';
 
 const logLevel = env.get('LOG_LEVEL') ? env.get('LOG_LEVEL') : 'INFO';
 
