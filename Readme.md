@@ -1,10 +1,28 @@
 # Nodejs FES Template
-This version includes support for OpenAPI 3.0
+Building a Node.js service using the API-first approach
 https://developers.redhat.com/blog/2019/01/14/building-a-node-js-service-using-the-api-first-approach/
-https://github.com/rhappdev/nodejs-template/tree/openapi3
+
+This project is available on Red Hat Developers website
+https://developers.redhat.com/
+
+Branch "master" - Using the OpenAPI 2.x spec - https://github.com/rhappdev/nodejs-template/
+Branch "openapi3" - https://github.com/rhappdev/nodejs-template/tree/openapi3
+
+This project below includes support for OpenAPI 3.0
+--> https://github.com/rhappdev/nodejs-template/tree/openapi3
+
+# Other materials
+apiFirst workshop
+https://github.com/rhappdev/api-first-workshop/tree/master/docs
+https://github.com/rhappdev/api-first-workshop/tree/master/nodejs
+https://github.com/rhappdev/api-first-workshop/blob/master/docs/exercise-4.m
+https://github.com/rhappdev/api-first-workshop-nodejs
+https://github.com/rhappdev/api-first-workshop-angular
+
+# This repo
 
 The main purpose of this repository is to show a project setup and workflow for writing microservice.
-- Rest APIs will be using the Swagger (OpenAPI) Specification
+- Rest APIs will be using the Swagger (OpenAPI 3.0) Specification
 - this is a template for writing back-end services
 - Using Prom-client a javascript client ( https://prometheus.io/ ) that provide metrics for monitoring web apps
 - Using async wrapper to manage debugging
