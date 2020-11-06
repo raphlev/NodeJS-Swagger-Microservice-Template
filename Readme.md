@@ -216,12 +216,30 @@ describe('App', () => {
 });
 ```
 ### Running tests using NPM Scripts
-````
+```
 npm run test
-
-````
+npm run test:windows
+```
 Test files are created under test folder.
 
+# Logger
+In npm scripts, set 2 variables to display logs
+
+Windows
+```
+set LOG_LEVEL=DEBUG && set DEBUG=app:*
+```
+
+Linux
+```
+export LOG_LEVEL=DEBUG && export DEBUG=app:*
+```
+
+Possible value for LOG_LEVEL:
+DEBUG , ERROR , INFO (default) , WARNING , NONE , CUSTOM ?
+
+Possible value for DEBUG (implementation of debug-level and debug)
+OFF, app:* , *.* , ..
 
 # Swagger
 ## Specification
